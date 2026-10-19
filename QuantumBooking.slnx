@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Docs/">
     <File Path="README.md" />
+    <File Path="docs/architecture.md" />
     <File Path="LICENSE" />
   </Folder>
   <Folder Name="/Python hosts/">
