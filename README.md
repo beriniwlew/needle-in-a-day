@@ -70,7 +70,7 @@ explain each new idea where it is used.
 | Chapter | Question | New idea | Q# source | Run and check |
 |---|---|---|---|---|
 | 1 | Which start slot is free? | Phase marking and amplification | [SlotSearch.qs](src/SlotSearch.qs) | `uv run driver.py --check` |
-| 2 | Which provider, room, and time work? | A computed constraint oracle | [LocationSearch.qs](src/LocationSearch.qs) | `uv run location.py --check` |
+| 2 | Which provider, sub-location, and time work? | A computed constraint oracle | [LocationSearch.qs](src/LocationSearch.qs) | `uv run location.py --check` |
 | 3 | What is the earliest feasible booking? | Threshold search with an unknown answer count | [EarliestSearch.qs](src/EarliestSearch.qs) | `uv run earliest.py --check` |
 | 4 | Which placement leaves the fewest loose ends? | Computing and minimising a score | [PlacementSearch.qs](src/PlacementSearch.qs) | `uv run placement.py --check` |
 
@@ -85,10 +85,10 @@ For the implementation boundary between languages, see
 | Term | Meaning here |
 |---|---|
 | Location | The whole place being booked, with one day of slots. |
-| Sub-location | A bookable room or space; the samples call them Suite A to D. |
+| Sub-location | A bookable space inside the location; the samples call them Suite A to D. |
 | Provider | The person who performs the service. |
 | Slot | One indexed start time; sample slots are hourly, starting at 09:00. |
-| Feasible booking | A qualified provider and suitable room, both free for the entire service within the day. |
+| Feasible booking | A qualified provider and suitable sub-location, both free for the entire service within the day. |
 
 ### The quantum program
 
@@ -137,9 +137,9 @@ shots and fixes the seed. `--circuit` draws the three-openings circuit.
 
 ## Chapter two: provider × sub-location × time
 
-Four providers, four rooms, and eight slots give 128 candidates on seven index
+Four providers, four sub-locations, and eight slots give 128 candidates on seven index
 qubits. The inputs stay separate: two availability tables, provider
-qualifications, and room suitability. The oracle computes each condition into
+qualifications, and sub-location suitability. The oracle computes each condition into
 scratch qubits and marks a booking only when every condition holds.
 
 For a two-slot service, the circuit shifts the time register to read the next
@@ -210,7 +210,7 @@ searching but does not guarantee a better result in an individual random trial.
 ## Chapter four: the best placement, by fewest loose ends
 
 A booking has a loose end on a side when the neighbouring slot is free for both
-the provider and room. Zero loose ends means it sits against existing bookings
+the provider and sub-location. Zero loose ends means it sits against existing bookings
 or the day boundary; two means it floats in free time. This discrete score
 illustrates a placement policy, without modelling buffers or continuous time.
 
@@ -266,10 +266,10 @@ approximation would choose one round and reduce that to 31.64%.
 three; [location-quiet.json](samples/location-quiet.json) is chapter four's
 default. Both host languages read these files directly.
 
-Provider, room, and slot counts must be powers of two, with at least two slots.
+Provider, sub-location, and slot counts must be powers of two, with at least two slots.
 Availability rows have one entry per slot, eligibility flags have one entry per
 resource, and durations range from one slot to the whole day. The register packs
-indices as `p + P*s + P*S*t`: provider bits first, then room bits, then time bits,
+indices as `p + P*s + P*S*t`: provider bits first, then sub-location bits, then time bits,
 each little-endian.
 
 Q# does not read the files, so [Samples.qs](src/Samples.qs) mirrors the quantum
