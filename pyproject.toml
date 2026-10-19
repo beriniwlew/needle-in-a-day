@@ -1,0 +1,14 @@
+[project]
+name = "needle-in-a-day"
+version = "0.1.0"
+description = "Grover's search over one day of appointment slots. Rider edits, the qdk simulator runs."
+requires-python = ">=3.10"
+authors = [{ name = "Ivan Berin Iwlew" }]
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "qdk>=1.33",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,32 @@
+<Solution>
+  <Folder Name="/Docs/">
+    <File Path="README.md" />
+    <File Path="LICENSE" />
+  </Folder>
+  <Folder Name="/Python hosts/">
+    <File Path="needle_bridge.py" />
+    <File Path="driver.py" />
+    <File Path="location.py" />
+    <File Path="earliest.py" />
+    <File Path="placement.py" />
+    <File Path="tests/test_quantum.py" />
+    <File Path="pyproject.toml" />
+    <File Path="requirements.txt" />
+  </Folder>
+  <Folder Name="/Quantum (Q#)/">
+    <File Path="qsharp.json" />
+    <File Path="src/SlotSearch.qs" />
+    <File Path="src/LocationSearch.qs" />
+    <File Path="src/Samples.qs" />
+    <File Path="src/EarliestSearch.qs" />
+    <File Path="src/PlacementSearch.qs" />
+  </Folder>
+  <Folder Name="/Samples/">
+    <File Path="samples/location.json" />
+    <File Path="samples/days.json" />
+    <File Path="samples/location-quiet.json" />
+  </Folder>
+  <Project Path="dotnet/QuantumBooking.Core/QuantumBooking.Core.csproj" />
+  <Project Path="dotnet/QuantumBooking.Host/QuantumBooking.Host.csproj" />
+  <Project Path="dotnet/QuantumBooking.Tests/QuantumBooking.Tests.csproj" />
+</Solution>

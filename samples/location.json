@@ -1,0 +1,20 @@
+{
+  "description": "Four providers, four sub-locations, eight hourly slots from 09:00. Casey does not offer the service and Suite D lacks its equipment, so neither can appear in a feasible booking. Read by location.py and by the C# host; src/Samples.qs mirrors it by hand because Q# cannot read files. Expected answers: 26 feasible one-slot bookings, 10 two-slot ones.",
+  "providers": ["Avery", "Blake", "Casey", "Drew"],
+  "subLocations": ["Suite A", "Suite B", "Suite C", "Suite D"],
+  "slots": ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"],
+  "providerFree": [
+    [true, false, true, true, false, false, true, true],
+    [false, false, false, true, true, true, false, false],
+    [true, true, false, false, true, true, true, false],
+    [false, true, true, false, false, true, true, true]
+  ],
+  "subLocationFree": [
+    [true, true, false, false, true, true, true, true],
+    [false, true, true, true, false, false, true, true],
+    [true, false, true, true, true, false, false, true],
+    [true, true, true, true, true, true, true, true]
+  ],
+  "qualified": [true, true, false, true],
+  "suitable": [true, true, true, false]
+}

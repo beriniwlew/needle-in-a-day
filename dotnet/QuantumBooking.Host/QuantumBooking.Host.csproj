@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    The C# way into the Q# search. There is no .NET API for the Q# toolchain
+    any more, so this console app embeds a CPython interpreter with CSnakes and
+    calls the Python bridge module that lives at the repository root.
+    Target framework, nullability and warnings-as-errors come from
+    dotnet/Directory.Build.props.
+  -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      CSnakes.Runtime brings two things: the runtime that hosts Python inside
+      this process, and a Roslyn source generator. The 2.x line is the one that
+      targets .NET 10; it is pinned to a specific prerelease so builds are
+      reproducible.
+    -->
+    <PackageReference Include="CSnakes.Runtime" Version="2.0.0-beta.350" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      The source generator reads this Python file at build time, parses the
+      type hints of its top-level functions and emits a C# class plus an
+      extension method `env.NeedleBridge()` with one strongly typed method per
+      Python function. The file is not copied anywhere: at run time the module
+      is imported from the "home" folder configured in Program.cs, which is the
+      repository root where this same file lives.
+    -->
+    <AdditionalFiles Include="..\..\needle_bridge.py" SourceItemType="Python" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuantumBooking.Core\QuantumBooking.Core.csproj" />
+  </ItemGroup>
+
+</Project>

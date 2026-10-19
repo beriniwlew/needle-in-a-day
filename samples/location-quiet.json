@@ -1,0 +1,20 @@
+{
+  "description": "A quiet day for chapter four. Four providers, four sub-locations, eight hourly slots from 09:00. Blake is booked at 12:00, Drew until 11:00, Suite C from 11:00 to 13:00; everyone else is free all day. Casey does not offer the service and Suite D lacks its equipment. 45 feasible two-slot bookings: 2 leave no loose ends (Avery or Blake in Suite C at 09:00, flush against the day start and Suite C's booking), 22 leave one, 21 float in free time and leave two.",
+  "providers": ["Avery", "Blake", "Casey", "Drew"],
+  "subLocations": ["Suite A", "Suite B", "Suite C", "Suite D"],
+  "slots": ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"],
+  "providerFree": [
+    [true, true, true, true, true, true, true, true],
+    [true, true, true, false, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
+    [false, false, true, true, true, true, true, true]
+  ],
+  "subLocationFree": [
+    [true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
+    [true, true, false, false, true, true, true, true],
+    [true, true, true, true, true, true, true, true]
+  ],
+  "qualified": [true, true, false, true],
+  "suitable": [true, true, true, false]
+}

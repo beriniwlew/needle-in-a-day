@@ -1,0 +1,43 @@
+version = 1
+revision = 3
+requires-python = ">=3.10"
+
+[[package]]
+name = "needle-in-a-day"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "qdk" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "qdk", specifier = ">=1.33" }]
+
+[[package]]
+name = "pyqir"
+version = "0.12.6"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/56/9f/486c5ea3faec379baf68323ab03c85c1c845eec1e8eea172f9b09773e75a/pyqir-0.12.6-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:1adbb3da7e75b881b9c1f4a6777bbcd0cf53e4fbf0347809b97e1a7fc50c36a3", size = 2157505, upload-time = "2026-09-30T19:47:45.053Z" },
+    { url = "https://files.pythonhosted.org/packages/f3/ef/d22e835caeb237ebf5f9d0208d0c77efe462786b6c3fb6668acaa2868d55/pyqir-0.12.6-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:32bd0f13c8f1d5651f2010134452c130ad5445223449b9b64e17b12ce5a37172", size = 2109240, upload-time = "2026-09-30T19:47:46.789Z" },
+    { url = "https://files.pythonhosted.org/packages/09/18/c4d2840af6dc6ca2dc99102f7b6d0566a0c1407dbefef17a5977b27596b3/pyqir-0.12.6-cp39-abi3-manylinux_2_34_x86_64.whl", hash = "sha256:fda9f40a5cb5191a0b938524b60695ac0ceeba48da4c9807035191088d4fb69b", size = 2645282, upload-time = "2026-09-30T19:47:48.314Z" },
+    { url = "https://files.pythonhosted.org/packages/a9/b8/050ddc70d29036a2508771561be4ce3c1f54c5a44aca51ead31e54ff12f6/pyqir-0.12.6-cp39-abi3-manylinux_2_38_aarch64.whl", hash = "sha256:216451808d5a6b4b7be8913e2391746e2171445a64aa61aeeb81580ed37c3fc2", size = 2716781, upload-time = "2026-09-30T19:47:49.654Z" },
+    { url = "https://files.pythonhosted.org/packages/3a/99/95d33d1ec9242ce51fdf4172818b5c49f41d2f06c611e73df36bef66ef7e/pyqir-0.12.6-cp39-abi3-win_amd64.whl", hash = "sha256:acae776a5054340f9f5c69f847ee9ae8431f1c70f4486310e63b2889423107c0", size = 1970418, upload-time = "2026-09-30T19:47:51.413Z" },
+    { url = "https://files.pythonhosted.org/packages/e5/e6/e63caeeaf627474e311b83b278043f809e25f8e6c69c5b8f0f618b902249/pyqir-0.12.6-cp39-abi3-win_arm64.whl", hash = "sha256:f67222f6cfbb285168c913f1c4e4f7e41408115dfca51c60d68c7de4d2acb67d", size = 1869538, upload-time = "2026-09-30T19:47:52.948Z" },
+]
+
+[[package]]
+name = "qdk"
+version = "1.33.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyqir" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0d/f1/791003c29f6112aa2c0c87c1656dd0e48e2a3bcaebb0a736fb15fc294fcc/qdk-1.33.1-cp310-abi3-macosx_10_12_x86_64.whl", hash = "sha256:539872118322c6eb1a36a7f4ff6533276f3713ca95b55b1aaab268130f4e9997", size = 7357546, upload-time = "2026-10-08T21:44:58.606Z" },
+    { url = "https://files.pythonhosted.org/packages/aa/66/b43294ea894b70302efbd5d177da4aefaabdabe447c46c241eb95ded80a6/qdk-1.33.1-cp310-abi3-macosx_11_0_arm64.whl", hash = "sha256:add8f34a579090565341ca8284dc0d24782163c15c25dde12963df3c5ae3891b", size = 6959991, upload-time = "2026-10-08T21:57:26.142Z" },
+    { url = "https://files.pythonhosted.org/packages/ca/d2/989261a071d1aec8624783a4ccd23273345a05db7b3aed45bfc1b2a50d07/qdk-1.33.1-cp310-abi3-manylinux_2_35_aarch64.whl", hash = "sha256:73fb2f5c21daf651047e2630696b1f55379c7626d0e9aa81f34a2808c47a912f", size = 7652730, upload-time = "2026-10-08T21:57:28.016Z" },
+    { url = "https://files.pythonhosted.org/packages/a4/d6/44b766a41056e842c387dc3052c59c828a544d7da10e37b96ff413b1f149/qdk-1.33.1-cp310-abi3-manylinux_2_35_x86_64.whl", hash = "sha256:c00c3ae69c0171d57314b8e7e8335a665287a525fc736bfd4c3e4630b5f9d43c", size = 8304816, upload-time = "2026-10-08T21:57:31.341Z" },
+    { url = "https://files.pythonhosted.org/packages/6f/17/82be2bdb4ade968bd882f510469064ff4625f35192eee31185dd2aa6e0a1/qdk-1.33.1-cp310-abi3-win_amd64.whl", hash = "sha256:f41a2fe634cbf75a9543a4929c5d96079657f5ad3d4dce5f57c432a81dc808e2", size = 8829864, upload-time = "2026-10-08T21:57:34.031Z" },
+    { url = "https://files.pythonhosted.org/packages/5f/6b/1cf24020edabe6b74e574707e4532dcac7fd8d5ff8cb50b2563763332ea0/qdk-1.33.1-cp310-abi3-win_arm64.whl", hash = "sha256:17e5091879e4f33900a16fec8404c6039f6af9d789ae14eb650ab4971c96d24c", size = 8289478, upload-time = "2026-10-08T21:57:37.712Z" },
+]

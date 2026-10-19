@@ -1,0 +1,9 @@
+{
+  "description": "Chapter one: one provider's day, eight hourly slots starting at dayStartHour. True means free. The fully booked day shows what Grover's search cannot do. Read by driver.py and by the C# host's --day mode; src/Samples.qs mirrors the three-openings day by hand.",
+  "dayStartHour": 9,
+  "days": [
+    { "name": "one opening", "free": [false, false, false, false, false, true, false, false] },
+    { "name": "three openings", "free": [false, false, true, false, true, false, false, true] },
+    { "name": "fully booked", "free": [false, false, false, false, false, false, false, false] }
+  ]
+}

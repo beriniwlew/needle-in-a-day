@@ -1,0 +1,24 @@
+{
+  "name": "qsharp-textmate",
+  "displayName": "Q# syntax highlighting (grammar from microsoft/qdk v1.33.0, MIT)",
+  "version": "1.33.0",
+  "publisher": "local",
+  "engines": { "vscode": "^1.0.0" },
+  "contributes": {
+    "languages": [
+      {
+        "id": "qsharp",
+        "aliases": ["Q#", "qsharp"],
+        "extensions": [".qs"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "qsharp",
+        "scopeName": "source.qsharp",
+        "path": "./syntaxes/qsharp.tmLanguage.json"
+      }
+    ]
+  }
+}
